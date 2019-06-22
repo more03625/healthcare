@@ -1,0 +1,86 @@
+<html>
+<head>
+<title>Registratio</title>
+<style>
+.register{
+  background-color: lightgray;
+  color: black;
+  font-size: 18px;
+  padding: 20px;
+  border-radius: 10px;
+  width: 550px;
+  margin-left:25%;
+}
+label{
+  color: black;
+  font-family: 'Ubuntu', 'Lato', sans-serif;
+  font-size: 16px;
+}
+
+#name,#password1,#password2,#phnum,#email{
+width: 250px;
+border: none;
+border-radius: 5px;
+outline: 0;
+padding: 7px;
+}
+#sub1{
+  width: 200px;
+  height: 40px;
+  cursor:pointer;
+  padding: 7px;
+  font-size: 16px;
+  font-family: 'Ubuntu', 'Lato', sans-serif;
+  font-weight: 600;
+  border: none;
+  border-radius: 3px;
+  background-color: green;
+  color: white;
+}
+
+#sub1:hover{
+  background-color: blue;
+}
+input[type="radio"]{
+  height: 18px;
+  width: 18px;
+}
+</style>
+<script>
+            function checkPassword(form) {
+                password1 = form.password1.value;
+                password2 = form.password2.value;
+
+                if (password1 == '')
+                    alert ("Please enter Password");
+                else if (password2 == '')
+                    alert ("Please enter confirm password");
+                else if (password1 != password2) {
+                    alert ("\nPassword did not match: Please try again...")
+                    return false;
+                }
+                else{
+                    //alert("Password Match: Welcome to GeeksforGeeks!")
+                    return true;
+                  }
+        }
+    </script>
+</head>
+<body>
+<div class="register">
+<form method= "post" id="register" action="" onsubmit="checkPassword(this)">
+<h2> Register here </h2>
+<input type="text" name="Fname" id="name" placeholder="Enter your name" style="float:left;" required>
+<input type="text" name="Lname" id="name" placeholder="Enter your surname" style="float:right;" required><br><br><br>
+<input type="text" name="num" id="phnum" placeholder="Enter mobile no" maxlength="10"  pattern="[7-9]{1}[0-9]{9}" title="number must begin with 7-9 and other numbers must be between 0-9" required>
+<input type="Email" name="email" id="email" placeholder="Enter your email id" style="float:right;" pattern=".+@gmail.com" title="please enter mail correctly" required><br><br>
+<input type="password" name="pass" id="password1" placeholder="Enter password" required><br><br>
+<input type="password" name="pass" id="password2" placeholder="Re-Enter password" required><br><br>
+<label> Gender : </label><br>
+<input type="radio" name="gender" id="male">Male<br>
+<input type="radio" name="gender" id="Female">Female<br><br>
+<center><input type="submit" name="submit" id="sub1"></center>
+<p align="center">Already have an account<br>
+  <a href="login2.html" align="center">Click here to login</a>
+</body>
+</html>
